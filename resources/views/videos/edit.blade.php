@@ -13,19 +13,20 @@
                                     <li>
                                         {{ $error }}
                                     </li>
-                                    @endforeach
+                                @endforeach
                             </ul>
                         </div>
                     @endif
-                {!! Form::open(['url'=>'videos', 'class'=>'form-horizontal']) !!}
-                        <div class="form-group">
-                            <div class="col-md-4 control-label">
-                                {!! Form::label('title', 'Tytuł: ') !!}
-                            </div>
-                            <div class="col-md-6">
-                                {!! Form::text('title', null, ['class'=>'form-control']) !!}
-                            </div>
+                    {!! Form::model($video, ['method'=>'PATCH', 'class'=>'form-horizontal', 'action'=>['VideosController@update',
+                    $video->id]]) !!}
+                    <div class="form-group">
+                        <div class="col-md-4 control-label">
+                            {!! Form::label('title', 'Tytuł: ') !!}
                         </div>
+                        <div class="col-md-6">
+                            {!! Form::text('title', null, ['class'=>'form-control']) !!}
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="col-md-4 control-label">
@@ -50,9 +51,9 @@
                             {!! Form::submit('Dodaj artykuł', null, ['class'=>'btn btn-primary']) !!}
                         </div>
                     </div>
-                {!! Form::close() !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
-    @endsection
+@endsection
