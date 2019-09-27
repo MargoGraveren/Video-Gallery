@@ -15,4 +15,5 @@ use Illuminate\Http\Request;
 
 Route::middleware('web')->get('/user', function (Request $request) {
     Route::resource('videos', 'VideosController');
+    Route::auth();
 });
