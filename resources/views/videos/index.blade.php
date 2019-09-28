@@ -5,9 +5,11 @@
     </div>
 
     @if(Session::has('video_created'))
-        <div class="alert-success card">
-            {{ Session::get('video_created') }}
-        </div>
+
+            <div class="alert-success card">
+                {{ Session::get('video_created') }}
+            </div>
+
     @endif
 
     <div class="row">
@@ -18,13 +20,14 @@
                 <div class="card">
 
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="{{$video->url}}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" src="{{$video->url}}?showinfo=0" frameborder="0"
+                                allowfullscreen></iframe>
                     </div>
                     <div class="card-content">
                         <a href="{{url('videos', $video->id)}}">
                             <h4>{{$video->title}}</h4>
                         </a>
-                        <p>{{$video->description}}</p>
+                        <p>{{ Str::limit($video->description, $limit=100)}}</p>
                         <span class="upper-label">Dodał</span>
                         <span class="video-author">{{ $video->user->name }}</span>
                     </div>

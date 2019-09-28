@@ -5,9 +5,4 @@
         <h1>{{ $header }}</h1>
     </div>
 
-    <div class="videos-header card">
-        <h3>{{ $content }}</h3>
-    </div>
-
-
 @endsection

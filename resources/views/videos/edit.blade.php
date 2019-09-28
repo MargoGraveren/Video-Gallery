@@ -7,9 +7,9 @@
                 <div class="panel-body">
                     <!-- Formularz -->
                     @include('videos.form_errors')
-                    {!! Form::model($video, ['method'=>'PATCH', 'class'=>'form-horizontal', 'action'=>['VideosController@update',
-                    $video->id]]) !!}
-                        @include('videos.form', ['buttonText'=>'Zapisz zmiany']);
+                    {!! Form::model($video, ['method'=>'PATCH', 'class'=>'form-horizontal',
+                    'action'=>['VideosController@update', $video->id]]) !!}
+                        @include('videos.form', ['buttonText'=>'Zapisz zmiany'])
                     {!! Form::close() !!}
                 </div>
             </div>

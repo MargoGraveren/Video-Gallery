@@ -12,17 +12,16 @@
             <div class="card">
 
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="{{$videos->url}}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    <iframe class="embed-responsive-item" src="{{$videos->url}}?showinfo=0" frameborder="0"
+                            allowfullscreen></iframe>
                 </div>
 
                 <div class="single-video-content">
                     <div class="categories">
                         <h4>Kategorie</h4>
-                        <span>
-                    <a href="">Webdesign</a>,&nbsp;
-                    <a href="">PHP</a>,&nbsp;
-                    <a href="">Angular</a>
-                    </span>
+                        @foreach($videos->categories as $category)
+                            <a href="">{{ $category->name }}&nbsp</a>
+                        @endforeach
                     </div>
                     <h4>Pełny opis</h4>
                     <p>{{$videos->description}}</p>
